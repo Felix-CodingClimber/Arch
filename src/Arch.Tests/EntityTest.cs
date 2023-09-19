@@ -6,8 +6,6 @@ using static NUnit.Framework.Assert;
 
 namespace Arch.Tests;
 
-#if !PURE_ECS
-
 /// <summary>
 ///     The <see cref="EntityTest"/> class
 ///     tests basic <see cref="Entity"/> operations and especially their extensions.
@@ -170,4 +168,3 @@ public partial class EntityTest
         True(_entity.Has<Transform, Rotation>());
     }
 }
-#endif

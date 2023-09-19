@@ -1,11 +1,9 @@
-#if !PURE_ECS
 using Arch.Core.Extensions;
 
 namespace Arch.Core.Utils;
 
 /// <summary>
 ///     A debug view exclusive for the <see cref="Entity"/> to ease the debugging.
-///     <remarks>Not available for #define pure_ecs.</remarks>
 /// </summary>
 internal sealed class EntityDebugView
 {
@@ -65,5 +63,3 @@ internal sealed class EntityDebugView
     /// </summary>
     public EntityInfo EntityInfo => IsAlive ? World.EntityInfo[_entity.Id] : new EntityInfo();
 }
-
-#endif

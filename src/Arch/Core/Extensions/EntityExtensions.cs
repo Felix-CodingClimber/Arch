@@ -1,5 +1,4 @@
 using System.Diagnostics.Contracts;
-using Arch.Core;
 using Arch.Core.Utils;
 
 namespace Arch.Core.Extensions;
@@ -11,8 +10,6 @@ namespace Arch.Core.Extensions;
 /// </summary>
 public static partial class EntityExtensions
 {
-#if !PURE_ECS
-
     /// <summary>
     ///     Returns the <see cref="Archetype"/> of an <see cref="Entity"/>.
     /// </summary>
@@ -217,15 +214,11 @@ public static partial class EntityExtensions
         var world = World.Worlds[entity.WorldId];
         world.Remove<T>(entity);
     }
-#endif
 }
 
 
 public static partial class EntityExtensions
 {
-
-#if !PURE_ECS
-
     /// <summary>
     ///     Sets or replaces a component for an <see cref="Entity"/>.
     /// </summary>
@@ -403,6 +396,4 @@ public static partial class EntityExtensions
         var world = World.Worlds[entity.WorldId];
         world.RemoveRange(entity, types);
     }
-
-#endif
 }

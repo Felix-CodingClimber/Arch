@@ -17,19 +17,12 @@ public partial class World
     {
         var edgeIndex = type.Id - 1;
 
-#if NET5_0_OR_GREATER
         ref var newArchetype = ref oldArchetype.TryGetAddEdge(edgeIndex, out var exists);
         if (!exists)
         {
             newArchetype = GetOrCreate(oldArchetype.Types.Add(type));
         }
-#else
-        if (!oldArchetype.TryGetAddEdge(edgeIndex, out var newArchetype))
-        {
-            newArchetype = GetOrCreate(oldArchetype.Types.Add(type));
-            oldArchetype.CreateAddEdge(edgeIndex, newArchetype);
-        }
-#endif
+
         return newArchetype;
     }
 }

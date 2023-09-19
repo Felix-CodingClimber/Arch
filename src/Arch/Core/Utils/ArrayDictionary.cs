@@ -79,31 +79,6 @@ internal class ArrayDictionary<TValue>
         }
     }
 
-#if !NET5_0_OR_GREATER
-
-    /// <summary>
-    ///     Trys to return an item at the given index.
-    /// </summary>
-    /// <param name="index">The index.</param>
-    /// <param name="item">The item.</param>
-    /// <returns>True if it exists, false if it does not.</returns>
-    internal bool TryGet(int index, out TValue item)
-    {
-        Debug.Assert(index >= 0);
-
-        if (index < _maxArraySize)
-        {
-            Array.Resize(ref _array, _maxArraySize);
-            item = _array[index];
-            var exists = !Equals(item, default(TValue));
-            return exists;
-        }
-
-        return _dictionary.TryGetValue(index, out item);
-    }
-
-#else
-
     /// <summary>
     ///     Trys to return an item at the given index.
     /// </summary>
@@ -124,5 +99,4 @@ internal class ArrayDictionary<TValue>
 
         return ref  CollectionsMarshal.GetValueRefOrAddDefault(_dictionary, index, out exists)!;
     }
-#endif
 }

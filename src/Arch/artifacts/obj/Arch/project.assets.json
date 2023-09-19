@@ -1,0 +1,355 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0-windows7.0": {
+      "Collections.Pooled/2.0.0-preview.27": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Collections.Pooled.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Collections.Pooled.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.HighPerformance/7.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.ObjectPool/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ZeroAllocJobScheduler/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.ObjectPool": "7.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/JobScheduler.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/JobScheduler.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    },
+    "net8.0-windows7.0/win10-x64": {
+      "Collections.Pooled/2.0.0-preview.27": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.0/Collections.Pooled.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.0/Collections.Pooled.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "CommunityToolkit.HighPerformance/7.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/CommunityToolkit.HighPerformance.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.ObjectPool/7.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net7.0/Microsoft.Extensions.ObjectPool.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ZeroAllocJobScheduler/1.0.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.ObjectPool": "7.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.1/JobScheduler.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/JobScheduler.dll": {
+            "related": ".xml"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Collections.Pooled/2.0.0-preview.27": {
+      "sha512": "VS3uHc1GNamanS1i1hQ3PoZUddIagCswVMWvucAgqWwY2KVwgL2Q7raGu0hTqP/CWuROoq0RiNbIvu4ST1bMzg==",
+      "type": "package",
+      "path": "collections.pooled/2.0.0-preview.27",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "collections.pooled.2.0.0-preview.27.nupkg.sha512",
+        "collections.pooled.nuspec",
+        "lib/net461/Collections.Pooled.dll",
+        "lib/net461/Collections.Pooled.xml",
+        "lib/netcoreapp3.0/Collections.Pooled.dll",
+        "lib/netcoreapp3.0/Collections.Pooled.xml",
+        "lib/netstandard2.0/Collections.Pooled.dll",
+        "lib/netstandard2.0/Collections.Pooled.xml",
+        "lib/netstandard2.1/Collections.Pooled.dll",
+        "lib/netstandard2.1/Collections.Pooled.xml"
+      ]
+    },
+    "CommunityToolkit.HighPerformance/7.1.2": {
+      "sha512": "rVNzu/HQd60e8sInhHLpboWF9PU/kgenTxKYScjU3EpGMlCnSifomqiJuDhN4MILVioIwpm7eiurQNpngbWpAw==",
+      "type": "package",
+      "path": "communitytoolkit.highperformance/7.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "License.md",
+        "ThirdPartyNotices.txt",
+        "communitytoolkit.highperformance.7.1.2.nupkg.sha512",
+        "communitytoolkit.highperformance.nuspec",
+        "lib/net5.0/CommunityToolkit.HighPerformance.dll",
+        "lib/net5.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/net5.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netcoreapp2.1/CommunityToolkit.HighPerformance.dll",
+        "lib/netcoreapp2.1/CommunityToolkit.HighPerformance.pdb",
+        "lib/netcoreapp2.1/CommunityToolkit.HighPerformance.xml",
+        "lib/netcoreapp3.1/CommunityToolkit.HighPerformance.dll",
+        "lib/netcoreapp3.1/CommunityToolkit.HighPerformance.pdb",
+        "lib/netcoreapp3.1/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard1.4/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard1.4/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard1.4/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.0/CommunityToolkit.HighPerformance.xml",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.dll",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.pdb",
+        "lib/netstandard2.1/CommunityToolkit.HighPerformance.xml"
+      ]
+    },
+    "Microsoft.Extensions.ObjectPool/7.0.0": {
+      "sha512": "udvKco0sAVgYGTBnHUb0tY9JQzJ/nPDiv/8PIyz69wl1AibeCDZOLVVI+6156dPfHmJH7ws5oUJRiW4ZmAvuuA==",
+      "type": "package",
+      "path": "microsoft.extensions.objectpool/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net462/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net462/Microsoft.Extensions.ObjectPool.xml",
+        "lib/net7.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/net7.0/Microsoft.Extensions.ObjectPool.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.xml",
+        "microsoft.extensions.objectpool.7.0.0.nupkg.sha512",
+        "microsoft.extensions.objectpool.nuspec"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/5.0.0": {
+      "sha512": "ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net45/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.1/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "ZeroAllocJobScheduler/1.0.2": {
+      "sha512": "2zQrqXKOUkpy3F0m0Hc69cFjblXAgTmrFSMpqVQt0V0QQknJrfmlaebyosA6N6qfC8klcqfKTWPb9H0xbnGbQw==",
+      "type": "package",
+      "path": "zeroallocjobscheduler/1.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.1/JobScheduler.dll",
+        "lib/netstandard2.1/JobScheduler.xml",
+        "zeroallocjobscheduler.1.0.2.nupkg.sha512",
+        "zeroallocjobscheduler.nuspec"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows7.0": [
+      "Collections.Pooled >= 2.0.0-preview.27",
+      "CommunityToolkit.HighPerformance >= 7.1.2",
+      "System.Runtime.CompilerServices.Unsafe >= 5.0.0",
+      "ZeroAllocJobScheduler >= 1.0.2"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Felix\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.2.6.8-alpha",
+    "restore": {
+      "projectUniqueName": "E:\\Aktuelle Projekte\\C#\\BloxelGame\\WorldOfBloxels\\ThirdParty\\Arch\\src\\Arch\\Arch.csproj",
+      "projectName": "Arch",
+      "projectPath": "E:\\Aktuelle Projekte\\C#\\BloxelGame\\WorldOfBloxels\\ThirdParty\\Arch\\src\\Arch\\Arch.csproj",
+      "packagesPath": "C:\\Users\\Felix\\.nuget\\packages\\",
+      "outputPath": "E:\\Aktuelle Projekte\\C#\\BloxelGame\\WorldOfBloxels\\ThirdParty\\Arch\\src\\Arch\\artifacts\\obj\\Arch\\",
+      "projectStyle": "PackageReference",
+      "crossTargeting": true,
+      "configFilePaths": [
+        "C:\\Users\\Felix\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "E:\\Aktuelle Projekte\\Arbeit\\WinUITest\\LibRelease": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.telerik.com/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "Collections.Pooled": {
+            "target": "Package",
+            "version": "[2.0.0-preview.27, )"
+          },
+          "CommunityToolkit.HighPerformance": {
+            "target": "Package",
+            "version": "[7.1.2, )"
+          },
+          "System.Runtime.CompilerServices.Unsafe": {
+            "target": "Package",
+            "version": "[5.0.0, )"
+          },
+          "ZeroAllocJobScheduler": {
+            "target": "Package",
+            "version": "[1.0.2, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100-rc.1.23455.8\\RuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win10-x64": {
+        "#import": []
+      }
+    }
+  }
+}

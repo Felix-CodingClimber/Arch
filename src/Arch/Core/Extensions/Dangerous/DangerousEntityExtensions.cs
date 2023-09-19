@@ -2,7 +2,7 @@ namespace Arch.Core.Extensions.Dangerous;
 
 /// <summary>
 ///     The <see cref="DangerousEntityExtensions"/> class
-///     contains several <see cref="Entity"/> related extension methods which give acess to underlaying data structures that should only be modified when you exactly know what you are doing.
+///     contains several <see cref="Entity"/> related extension methods which give access to underlaying data structures that should only be modified when you exactly know what you are doing.
 /// </summary>
 public static class DangerousEntityExtensions
 {
@@ -15,10 +15,6 @@ public static class DangerousEntityExtensions
     /// <returns>The new <see cref="Entity"/>.</returns>
     public static Entity CreateEntityStruct(int id, int world)
     {
-#if PURE_ECS
-        return new Entity(id, 0);
-#else
         return new Entity(id, world);
-#endif
     }
 }

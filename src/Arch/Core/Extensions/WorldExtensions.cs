@@ -168,13 +168,6 @@ public static class WorldExtensions
         }
 
         world.Move(entity, oldArchetype, newArchetype, out _);
-        
-#if EVENTS
-        for (var i = 0; i < components.Count; i++)
-        {
-            world.OnComponentAdded(entity, components[i]);
-        }
-#endif
     }
 
         /// <summary>

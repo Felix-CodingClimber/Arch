@@ -1,102 +1,59 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <LangVersion>latest</LangVersion>
-    <TargetFrameworks>net7.0; net6.0; netstandard2.1</TargetFrameworks>
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-windows</TargetFrameworks>
+		<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+		<Platforms>x64</Platforms>
+		<!-- Needed for .NET 8 see https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/8.0/rid-asset-list#recommended-action -->
+		<UseRidGraph>true</UseRidGraph>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<Nullable>enable</Nullable>
+		<Version>1.2.6.8-alpha</Version>
+		<NoWarn>1701;1702;1591</NoWarn>
+		<Configurations>Debug;Release</Configurations>
+		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+	</PropertyGroup>
 
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <Nullable>enable</Nullable>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<DefineConstants>TRACE</DefineConstants>
+		<Optimize>false</Optimize>
+	</PropertyGroup>
 
-    <PackageId>Arch</PackageId>
-    <Title>Arch</Title>
-    <Version>1.2.6.8-alpha</Version>
-    <Authors>genaray</Authors>
-    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
-    <Description>A high performance c# net.6 and net.7 archetype based ECS ( Entity component system ).</Description>
-    <PackageReleaseNotes>Added more dangerous utility methods. 
-Entity now implements IComparable&lt;Entity&gt;.
-DangerousWorldExtension can now return the Slot for an entity, used for dangerous acess and serialisation. 
-Checking a default entity or reference for IsAlive now returns false. 
-Archetypes with zero entities are now skipped during iteration. 
-BitSets are now vectorized, resulting in faster checks when large amounts of components are used.
-.SetEntities for Archetypes as a dangerous util. </PackageReleaseNotes>
-    <PackageTags>c#;.net;.net6;.net7;ecs;game;entity;gamedev; game-development; game-engine; entity-component-system;</PackageTags>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
 
-    <PackageProjectUrl>https://github.com/genaray/Arch</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/genaray/Arch.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <IsPackable>true</IsPackable>
+	<PropertyGroup>
+		<EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
+	</PropertyGroup>
 
-    <LangVersion>11</LangVersion>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Copyright>Apache2.0</Copyright>
+	<ItemGroup>
+		<InternalsVisibleTo Include="Arch.Benchmarks" />
+		<InternalsVisibleTo Include="Arch.Tests" />
+	</ItemGroup>
 
-    <NoWarn>1701;1702;1591</NoWarn>
+	<ItemGroup>
+		<Using Include="System" />
+		<Using Include="System.Collections" />
+		<Using Include="System.Collections.Generic" />
+		<Using Include="System.Diagnostics" />
+		<Using Include="System.Diagnostics.CodeAnalysis" />
+		<Using Include="System.IO" />
+		<Using Include="System.Linq" />
+		<Using Include="System.Runtime.CompilerServices" />
+		<Using Include="System.Runtime.InteropServices" />
+	</ItemGroup>
 
-    <Configurations>Debug;Debug-PureECS;Debug-Events;Release;Release-PureECS;Release-Events;</Configurations>
-  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Arch.SourceGen\Arch.SourceGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
+	</ItemGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DefineConstants>TRACE;</DefineConstants>
-    <Optimize>false</Optimize>
-    <PlatformTarget>AnyCPU</PlatformTarget>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-PureECS'">
-    <DefineConstants>TRACE;PURE_ECS;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-Events'">
-    <DefineConstants>TRACE;EVENTS;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release-Events'">
-    <DefineConstants>TRACE;EVENTS;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release-PureECS'">
-    <DefineConstants>TRACE;PURE_ECS</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <EmitCompilerGeneratedFiles>true</EmitCompilerGeneratedFiles>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <InternalsVisibleTo Include="Arch.Benchmarks" />
-    <InternalsVisibleTo Include="Arch.Tests" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Using Include="System" />
-    <Using Include="System.Collections" />
-    <Using Include="System.Collections.Generic" />
-    <Using Include="System.Diagnostics" />
-    <Using Include="System.Diagnostics.CodeAnalysis" />
-    <Using Include="System.IO" />
-    <Using Include="System.Linq" />
-    <Using Include="System.Runtime.CompilerServices" />
-    <Using Include="System.Runtime.InteropServices" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Arch.SourceGen\Arch.SourceGen.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Collections.Pooled" Version="2.0.0-preview.27" />
-    <PackageReference Include="CommunityToolkit.HighPerformance" Version="7.1.2" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />
-    <PackageReference Include="ZeroAllocJobScheduler" Version="1.0.2" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Collections.Pooled" Version="2.0.0-preview.27" />
+		<PackageReference Include="CommunityToolkit.HighPerformance" Version="7.1.2" />
+		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />
+		<PackageReference Include="ZeroAllocJobScheduler" Version="1.0.2" />
+	</ItemGroup>
 
 </Project>

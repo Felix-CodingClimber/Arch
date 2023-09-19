@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = Arch.SourceGen
+build_property.ProjectDir = E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch.SourceGen\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 

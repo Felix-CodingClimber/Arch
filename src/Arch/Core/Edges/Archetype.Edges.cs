@@ -23,39 +23,6 @@ public partial class Archetype
     /// TODO : Kill me and replace me with a better jaggedarray.
     private readonly ArrayDictionary<Archetype> _addEdges;
 
-#if !NET5_0_OR_GREATER
-
-    /// <summary>
-    ///     Tries to get a cached archetype that is reached through adding a component
-    ///     type to this archetype.
-    /// </summary>
-    /// <param name="index">
-    ///     The index of the archetype in the cache, <see cref="ComponentType.Id"/> - 1
-    /// </param>
-    /// <param name="archetype">The archetype to cache.</param>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal void CreateAddEdge(int index, Archetype archetype)
-    {
-        _addEdges.Add(index, archetype);
-    }
-
-    /// <summary>
-    ///     Tries to get a cached archetype that is reached through adding a component
-    ///     type to this archetype.
-    /// </summary>
-    /// <param name="index">
-    ///     The index of the archetype in the cache, <see cref="ComponentType.Id"/> - 1
-    /// </param>
-    /// <param name="archetype">The cached archetype if it exists, null otherwise.</param>
-    /// <returns>True if the archetype exists, false otherwise.</returns>
-    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-    internal bool TryGetAddEdge(int index, [NotNullWhen(true)] out Archetype? archetype)
-    {
-        return _addEdges.TryGet(index, out archetype);
-    }
-
-#else
-
     /// <summary>
     ///     Tries to get a cached archetype that is reached through adding a component
     ///     type to this archetype.
@@ -70,8 +37,6 @@ public partial class Archetype
     {
         return ref _addEdges.TryGet(index, out exists!);
     }
-
-#endif
 
     /// <summary>
     ///     Removes an Edge at the given index.

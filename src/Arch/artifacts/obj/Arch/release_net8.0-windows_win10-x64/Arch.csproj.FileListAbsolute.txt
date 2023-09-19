@@ -1,0 +1,13 @@
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\bin\Arch\release_net8.0-windows_win10-x64\Arch.deps.json
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\bin\Arch\release_net8.0-windows_win10-x64\Arch.dll
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\bin\Arch\release_net8.0-windows_win10-x64\Arch.pdb
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.csproj.AssemblyReference.cache
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.GeneratedMSBuildEditorConfig.editorconfig
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.AssemblyInfoInputs.cache
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.AssemblyInfo.cs
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.csproj.CoreCompileInputs.cache
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.sourcelink.json
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.dll
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\refint\Arch.dll
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\Arch.pdb
+E:\Aktuelle Projekte\C#\BloxelGame\WorldOfBloxels\ThirdParty\Arch\src\Arch\artifacts\obj\Arch\release_net8.0-windows_win10-x64\ref\Arch.dll

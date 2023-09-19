@@ -13,12 +13,7 @@ namespace Arch.Core;
 [SkipLocalsInit]
 public ref struct Enumerator<T>
 {
-
-#if NET7_0_OR_GREATER
     private readonly ref T _ptr;
-#else
-    private readonly Ref<T> _ptr;
-#endif
 
     private int _index;
     private readonly int _length;
@@ -29,12 +24,7 @@ public ref struct Enumerator<T>
     /// <param name="span">The <see cref="Span{T}"/> with items to iterate over.</param>
     public Enumerator(Span<T> span)
     {
-
-#if NET7_0_OR_GREATER
         _ptr = ref MemoryMarshal.GetReference(span);
-#else
-        _ptr = new Ref<T>(ref span.DangerousGetReference());
-#endif
 
         _length = span.Length;
         _index = _length;
@@ -47,11 +37,8 @@ public ref struct Enumerator<T>
     /// <param name="length">Its length or size.</param>
     public Enumerator(Span<T> span, int length)
     {
-#if NET7_0_OR_GREATER
         _ptr = ref MemoryMarshal.GetReference(span);
-#else
-        _ptr = new Ref<T>(ref span.DangerousGetReference());
-#endif
+
         _length = length;
         _index = _length;
     }
@@ -83,12 +70,7 @@ public ref struct Enumerator<T>
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         get
         {
-
-#if NET7_0_OR_GREATER
             return ref Unsafe.Add(ref _ptr, _index);
-#else
-            return ref Unsafe.Add(ref _ptr.Value, _index);
-#endif
         }
     }
 }

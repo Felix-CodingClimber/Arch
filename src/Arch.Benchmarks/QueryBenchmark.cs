@@ -42,7 +42,6 @@ public class QueryBenchmark
         });
     }
 
-#if !PURE_ECS
     [Benchmark]
     public void EntityExtensionQuery()
     {
@@ -54,7 +53,6 @@ public class QueryBenchmark
             refs.t0.Y += refs.t1.Y;
         });
     }
-#endif
 /*
     [Benchmark]
     public void Query()

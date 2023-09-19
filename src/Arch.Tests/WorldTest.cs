@@ -151,23 +151,14 @@ public partial class WorldTest
 
         // Check if reference takes care of wrong version
         That(recycledReference != otherReference, Is.EqualTo(true));
-#if PURE_ECS
-        That(otherReference.IsAlive(localWorld), Is.EqualTo(false));
-#else
         That(otherReference.IsAlive(), Is.EqualTo(false));
-#endif
 
         // Entity reference null is NOT alive.
         EntityReference cons = new EntityReference{};
         EntityReference refs = EntityReference.Null;
 
-#if PURE_ECS
-        That(refs.IsAlive(localWorld), Is.EqualTo(false));
-        That(cons.IsAlive(localWorld), Is.EqualTo(false));
-#else
         That(refs.IsAlive(), Is.EqualTo(false));
         That(cons.IsAlive(), Is.EqualTo(false));
-#endif
     }
 
     /// <summary>

@@ -1,62 +1,50 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RuntimeIdentifier>win10-x64</RuntimeIdentifier>
+		<Platforms>x64</Platforms>
+		<!-- Needed for .NET 8 see https://learn.microsoft.com/en-us/dotnet/core/compatibility/deployment/8.0/rid-asset-list#recommended-action -->
+		<UseRidGraph>true</UseRidGraph>
+		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<Configurations>Debug;Release</Configurations>
+		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+		<IsPackable>false</IsPackable>
+		<IsTestProject>true</IsTestProject>
+	</PropertyGroup>
 
-    <!--<AllowUnsafeBlocks>true</AllowUnsafeBlocks>-->
-    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
-    <Nullable>enable</Nullable>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Configurations>Debug;Release;Release-Pure;Release-PureECS;Release-Events;Debug-PureECS;Debug-Events</Configurations>
-    <!--<TreatWarningsAsErrors>true</TreatWarningsAsErrors>-->
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+		<DefineConstants>TRACE;</DefineConstants>
+	</PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-    <DefineConstants>TRACE;</DefineConstants>
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-PureECS'">
-    <DefineConstants>TRACE;PURE_ECS;</DefineConstants>
-  </PropertyGroup>
+	<ItemGroup>
+		<Using Include="System" />
+		<Using Include="System.Collections" />
+		<Using Include="System.Collections.Generic" />
+		<Using Include="System.IO" />
+		<Using Include="System.Linq" />
+		<Using Include="System.Runtime.CompilerServices" />
+		<Using Include="System.Threading" />
 
-  <PropertyGroup Condition="'$(Configuration)'=='Debug-Events'">
-    <DefineConstants>TRACE;EVENTS;</DefineConstants>
-  </PropertyGroup>
+		<Using Include="NUnit.Framework" />
+	</ItemGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>TRACE</DefineConstants>
-  </PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Arch\Arch.csproj" />
+	</ItemGroup>
 
-  <PropertyGroup Condition="'$(Configuration)'=='Release-Events'">
-    <DefineConstants>TRACE;EVENTS;</DefineConstants>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)'=='Release-PureECS'">
-    <DefineConstants>TRACE;PURE_ECS</DefineConstants>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <Using Include="System" />
-    <Using Include="System.Collections" />
-    <Using Include="System.Collections.Generic" />
-    <Using Include="System.IO" />
-    <Using Include="System.Linq" />
-    <Using Include="System.Runtime.CompilerServices" />
-    <Using Include="System.Threading" />
-
-    <Using Include="NUnit.Framework" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Arch\Arch.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="coverlet.collector" Version="3.1.2" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
-    <PackageReference Include="NUnit" Version="3.13.3" />
-    <PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
-    <PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="coverlet.collector" Version="3.1.2" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
+		<PackageReference Include="NUnit" Version="3.13.3" />
+		<PackageReference Include="NUnit.Analyzers" Version="3.3.0" />
+		<PackageReference Include="NUnit3TestAdapter" Version="4.2.1" />
+	</ItemGroup>
 
 </Project>

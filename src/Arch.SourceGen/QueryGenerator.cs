@@ -127,13 +127,11 @@ public class QueryGenerator : IIncrementalGenerator
 
                     public static partial class EntityExtensions
                     {
-                    #if !PURE_ECS
                         {{new StringBuilder().AppendEntityHases(25)}}
                         {{new StringBuilder().AppendEntitySets(25)}}
                         {{new StringBuilder().AppendEntityGets(25)}}
                         {{new StringBuilder().AppendEntityAdds(25)}}
                         {{new StringBuilder().AppendEntityRemoves(25)}}
-                    #endif
                     }
 
                 }
