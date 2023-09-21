@@ -7,13 +7,7 @@
 *.sln.docstates
 
 # Build results
-
-*/artifacts
-debug/
-release/
-x64
-*/bin
-*/obj
+**/artifacts
 
 # MSTest test Results
 [Tt]est[Rr]esult*/

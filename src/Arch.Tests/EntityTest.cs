@@ -20,6 +20,13 @@ public partial class EntityTest
         _entity = _world.Create(_group);
     }
 
+    [OneTimeTearDown]
+    public void TearDown()
+    {
+        World.Destroy(_world);
+        _world?.Dispose();
+    }
+
     private World _world;
     private readonly ComponentType[] _group = { typeof(Transform), typeof(Rotation) };
     private Entity _entity;

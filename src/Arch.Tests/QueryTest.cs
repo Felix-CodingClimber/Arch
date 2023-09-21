@@ -23,9 +23,19 @@ public partial class QueryTest
     }
 
     [OneTimeTearDown]
-    public void Teardown()
+    public void OneTimeTearDown()
     {
         _jobScheduler.Dispose();
+    }
+
+    [TearDown]
+    public void TearDown()
+    {
+        if (_world is not null)
+        {
+            World.Destroy(_world);
+            _world.Dispose();
+        }
     }
 
     [Test]
@@ -40,7 +50,7 @@ public partial class QueryTest
         }
 
         var count = 0;
-        _world.Query(query, (in Entity entity) => count++);
+        _world.QueryAll(query, (in Entity entity) => count++);
         That(count, Is.EqualTo(100));
     }
 
@@ -56,7 +66,7 @@ public partial class QueryTest
         }
 
         var count = 0;
-        _world.Query(query, (in Entity entity) => count++);
+        _world.QueryAll(query, (in Entity entity) => count++);
         That(count, Is.EqualTo(100));
     }
 
@@ -72,7 +82,7 @@ public partial class QueryTest
         }
 
         var count = 0;
-        _world.Query(query, (in Entity entity) => count++);
+        _world.QueryAll(query, (in Entity entity) => count++);
         That(count, Is.EqualTo(0));
     }
 
@@ -89,7 +99,7 @@ public partial class QueryTest
         }
 
         var count = 0;
-        _world.Query(query, (in Entity entity) => count++);
+        _world.QueryAll(query, (in Entity entity) => count++);
         That(count, Is.EqualTo(0));
 
         for (var index = 0; index < 100; index++)
@@ -98,7 +108,7 @@ public partial class QueryTest
         }
 
         count = 0;
-        _world.Query(query, (in Entity entity) => count++);
+        _world.QueryAll(query, (in Entity entity) => count++);
         That(count, Is.EqualTo(100));
     }
 
@@ -112,7 +122,7 @@ public partial class QueryTest
         }
 
         var count = 0;
-        _world.Query(_withoutAiQuery, (in Entity entity) => count++);
+        _world.QueryAll(_withoutAiQuery, (in Entity entity) => count++);
         That(count, Is.EqualTo(100));
     }
 
@@ -131,10 +141,10 @@ public partial class QueryTest
         }
 
         var queryCount = 0;
-        _world.Query(_withoutAiQuery, (in Entity entity) => queryCount++);
+        _world.QueryAll(_withoutAiQuery, (in Entity entity) => queryCount++);
 
         var otherQueryCount = 0;
-        _world.Query(_allQuery, (in Entity entity) => otherQueryCount++);
+        _world.QueryAll(_allQuery, (in Entity entity) => otherQueryCount++);
 
         That(queryCount, Is.EqualTo(100));
         That(otherQueryCount, Is.EqualTo(100));

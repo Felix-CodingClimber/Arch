@@ -36,6 +36,13 @@ public class EnumeratorTest
         }
     }
 
+    [OneTimeTearDown]
+    public void TearDown()
+    {
+        World.Destroy(_world);
+        _world?.Dispose();
+    }
+
     /// <summary>
     ///     Checks if the <see cref="World"/> <see cref="World.Archetypes"/> are enumerated correctly.
     /// </summary>

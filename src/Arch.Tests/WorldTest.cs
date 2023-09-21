@@ -39,6 +39,7 @@ public partial class WorldTest
     public void Teardown()
     {
         World.Destroy(_world);
+        _world?.Dispose();
     }
 
     /// <summary>
@@ -222,7 +223,7 @@ public partial class WorldTest
         // Destroy all but one
         var counter = 0;
         var query = new QueryDescription().WithAll<HeavyComponent>();
-        world.Query(in query, (in Entity entity) =>
+        world.QueryAll(in query, (in Entity entity) =>
         {
             if (counter < amount - 1)
             {

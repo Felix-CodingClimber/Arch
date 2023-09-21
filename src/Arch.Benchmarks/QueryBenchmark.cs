@@ -33,7 +33,7 @@ public class QueryBenchmark
     [Benchmark]
     public void WorldEntityQuery()
     {
-        _world.Query(in _queryDescription, static (in Entity entity) =>
+        _world!.QueryAll(in _queryDescription, static (in Entity entity) =>
         {
             var refs = _world.Get<Transform, Velocity>(entity);
 
@@ -45,7 +45,7 @@ public class QueryBenchmark
     [Benchmark]
     public void EntityExtensionQuery()
     {
-        _world.Query(in _queryDescription, (in Entity entity) =>
+        _world!.QueryAll(in _queryDescription, (in Entity entity) =>
         {
             var refs = entity.Get<Transform, Velocity>();
 
@@ -53,11 +53,11 @@ public class QueryBenchmark
             refs.t0.Y += refs.t1.Y;
         });
     }
-/*
+
     [Benchmark]
     public void Query()
     {
-        _world.Query(in _queryDescription, (ref Transform t, ref Velocity v) =>
+        _world!.Query(in _queryDescription, (ref Transform t, ref Velocity v) =>
         {
             t.X += v.X;
             t.Y += v.Y;
@@ -67,7 +67,7 @@ public class QueryBenchmark
     [Benchmark]
     public void EntityQuery()
     {
-        _world.Query(in _queryDescription, (in Entity entity, ref Transform t, ref Velocity v) =>
+        _world!.Query<Transform, Velocity>(in _queryDescription, (in Entity entity, ref Transform t, ref Velocity v) =>
         {
             t.X += v.X;
             t.Y += v.Y;
@@ -78,7 +78,7 @@ public class QueryBenchmark
     [Benchmark]
     public void Iterator()
     {
-        foreach (var chunk in _world.Query(in _queryDescription))
+        foreach (var chunk in _world!.Query(in _queryDescription))
         {
             var refs = chunk.GetFirst<Transform, Velocity>();
             foreach (var entity in chunk)
@@ -96,14 +96,14 @@ public class QueryBenchmark
     public void StructQuery()
     {
         var vel = new VelocityUpdate();
-        _world.InlineQuery<VelocityUpdate, Transform, Velocity>(in _queryDescription, ref vel);
+        _world!.InlineQuery<VelocityUpdate, Transform, Velocity>(in _queryDescription, ref vel);
     }
 
     [Benchmark]
     public void StructEntityQuery()
     {
         var vel = new VelocityEntityUpdate();
-        _world.InlineEntityQuery<VelocityEntityUpdate, Transform, Velocity>(in _queryDescription, ref vel);
+        _world!.InlineEntityQuery<VelocityEntityUpdate, Transform, Velocity>(in _queryDescription, ref vel);
     }
 
     public struct VelocityUpdate : IForEach<Transform, Velocity>
@@ -124,5 +124,5 @@ public class QueryBenchmark
             t.X += v.X;
             t.Y += v.Y;
         }
-    }*/
+    }
 }
